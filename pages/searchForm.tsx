@@ -37,6 +37,7 @@ export default function SearchForm() {
   const handleClear = () => {
     setSearchBy('');
     setSearchTerm('');
+    setResults(entriesState.entries);
   };
 
   const handleSelect = (eventKey) => {
