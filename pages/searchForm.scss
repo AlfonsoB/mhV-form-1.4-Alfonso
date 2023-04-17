@@ -1,8 +1,41 @@
 .search-bar-container {
   display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.search-bar-container Col {
+  padding: 15px;
+}
+
+#input-form-control {
+  margin: 10px 0;
+  border-radius: 0;
+}
+
+#input-dropdown {
+  margin: 10px 0;
+}
+
+.clear-btn {
+  margin: 10px 0;
+  padding: 0 10px;
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0);
+  color: black;
+  border: none;
 }
 
 .search-submit-btn {
-  width: 100%;
-  background-color: #014;
+  background-color: #cc0100;
+  border: none;
+  margin: 10px 0;
+  border-radius: 20px;
+  border-top-left-radius: 20px !important;
+  border-bottom-left-radius: 20px !important;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
 }

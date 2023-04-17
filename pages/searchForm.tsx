@@ -1,13 +1,23 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { Button, Form, FormControl, Table } from 'react-bootstrap';
+import {
+  Button,
+  Col,
+  Dropdown,
+  DropdownButton,
+  Form,
+  FormControl,
+  InputGroup,
+  Table,
+} from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
 import './searchForm.scss';
+import { FaSearch, FaMinusCircle } from 'react-icons/fa';
 
 export default function SearchForm() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchBy, setSearchBy] = useState('name');
+  const [searchBy, setSearchBy] = useState('');
   const entriesState = useSelector((state: RootState) => state.entries);
   const [results, setResults] = useState(entriesState.entries);
 
@@ -24,37 +34,60 @@ export default function SearchForm() {
     setResults(filteredItems);
   };
 
+  const handleClear = () => {
+    setSearchBy('');
+    setSearchTerm('');
+  };
+
+  const handleSelect = (eventKey) => {
+    setSearchBy(eventKey);
+  };
+
   return (
     <div>
+      <div className="card-top">
+        <h1 style={{ textAlign: 'center' }}>Message Query</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam
+          velit, bibendum tristique commodo ut, cursus id libero.
+        </p>
+      </div>
       <Form>
         <div className="search-bar-container">
-          <Form.Group controlId="searchTerm">
+          <InputGroup>
+            <DropdownButton
+              variant="outline-secondary"
+              title={<i className="bi bi-chevron-down"></i>}
+              id="input-dropdown"
+              placeholder="Search by parameter"
+              onSelect={handleSelect}
+            >
+              <Dropdown.Item eventKey="name">Name</Dropdown.Item>
+              <Dropdown.Item eventKey="email">Email</Dropdown.Item>
+              <Dropdown.Item eventKey="message">Message</Dropdown.Item>
+            </DropdownButton>
             <FormControl
+              id="input-form-control"
+              value={searchBy}
+              onChange={(e) => setSearchBy(e.target.value)}
+            />
+          </InputGroup>
+          <InputGroup className="input-group">
+            <FormControl
+              id="input-form-control"
               type="text"
               placeholder="Search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-          </Form.Group>
-          <Form.Group controlId="searchBy">
-            <Form.Control
-              as="select"
-              value={searchBy}
-              onChange={(e) => setSearchBy(e.target.value)}
-            >
-              <option value="name">Name</option>
-              <option value="email">Email</option>
-              <option value="message">Message</option>
-            </Form.Control>
-          </Form.Group>
+            <Button className="clear-btn" onClick={handleClear}>
+              <FaMinusCircle size={15} className="mx-3" />
+            </Button>
+            <Button className="search-submit-btn" onClick={handleSearch}>
+              <FaSearch size={20} className="mx-3" />
+            </Button>
+          </InputGroup>
         </div>
-        <Button
-          className="search-submit-btn"
-          variant="primary"
-          onClick={handleSearch}
-        >
-          Search
-        </Button>
       </Form>
       <Table striped bordered hover>
         <thead>
