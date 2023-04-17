@@ -46,7 +46,7 @@ export default function contactForm() {
       setMessage('');
       alert('Form submitted successfully!');
     } else {
-      alert('Please fill out all fields.');
+      alert('Please fill out all required fields.');
     }
   };
 
@@ -69,13 +69,17 @@ export default function contactForm() {
       <form className="contact-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <Col md={8}>
-            <label>Name</label>
+            <label>
+              Name <span style={{ color: 'red' }}>*</span>
+            </label>
             <input type="text" value={name} onChange={handleName} />
           </Col>
         </div>
         <div className="form-group">
           <Col md={8}>
-            <label>Email </label>
+            <label>
+              Email <span style={{ color: 'red' }}>*</span>
+            </label>
             <input type="email" value={email} onChange={handleEmail} />
             {!emailValid && email !== '' && (
               <p style={{ color: 'red' }}>
