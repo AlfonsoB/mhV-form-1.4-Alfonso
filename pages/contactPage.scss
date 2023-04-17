@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+  background-image: url('https://github.com/AlfonsoB/react-form-contact-us-8-Alfonso/blob/main/gradient.png?raw=true');
+  font-family: 'Balsamiq Sans', sans-serif;
+}
+
+.contact-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  position: relative;
+}
+
+.card {
+  background-color: #fff;
+  width: 50%;
+  padding: 50px;
+  border: none;
+  border-radius: 50px;
+}

@@ -1,0 +1,50 @@
+.card-top {
+  padding: 30px 0;
+}
+
+.card-top {
+  padding: 15px 0;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  margin-right: 1rem;
+  flex-basis: 30%;
+  text-align: right;
+  padding: 5px 0;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  flex-basis: 70%;
+}
+
+#text-area {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 250px;
+  padding: 10px;
+  margin-top: 30px;
+  box-sizing: border-box;
+  flex-basis: 70%;
+}
+
+.submit-btn {
+  display: flex;
+  background-color: #014;
+  margin: 0 auto;
+  border: none;
+}

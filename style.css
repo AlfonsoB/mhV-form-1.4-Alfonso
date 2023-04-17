@@ -1,0 +1,11 @@
+h1,
+p {
+  font-family: Alegreya;
+}
+
+.container {
+  min-height: 100%;
+  position: relative;
+  max-width: 4000px;
+  padding: 0;
+}
