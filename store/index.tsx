@@ -30,6 +30,7 @@ const store = configureStore({
   },
 });
 
+export type RootState = ReturnType<typeof store.getState>;
 export const { addEntry } = entriesSlice.actions;
 export const reducer = entriesSlice.reducer;
 export default store;

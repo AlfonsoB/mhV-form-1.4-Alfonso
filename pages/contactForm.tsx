@@ -3,11 +3,11 @@ import { useState } from 'react';
 import './contactForm.scss';
 import { Button, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { addEntry } from '../store/';
+import { addEntry, RootState } from '../store/';
 
 export default function contactForm() {
   const dispatch = useDispatch();
-  const entries = useSelector((state) => state.entries);
+  const entries = useSelector((state: RootState) => state.entries);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
