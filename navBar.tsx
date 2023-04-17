@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Navbar, NavLink } from 'react-bootstrap';
-import { AiOutlineFileSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import './navBar.scss';
 function NavBar(props) {
@@ -19,10 +18,13 @@ function NavBar(props) {
         />
       </Navbar.Brand>
       <div className="nav-links">
-        <NavLink onClick={() => handleButtonClick('/')}>
+        <NavLink className="nav-link-1" onClick={() => handleButtonClick('/')}>
           {props.contactButton}
         </NavLink>
-        <NavLink onClick={() => handleButtonClick('/search')}>
+        <NavLink
+          className="nav-link-2"
+          onClick={() => handleButtonClick('/search')}
+        >
           {props.searchButton}
         </NavLink>
       </div>

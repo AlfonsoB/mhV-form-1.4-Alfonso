@@ -15,5 +15,18 @@
 }
 
 .nav-links a {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
   padding: 0px 30px;
+}
+
+.nav-link-1::before {
+  content: '';
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  background: url('https://w7.pngwing.com/pngs/394/867/png-transparent-computer-icons-message-email-symbol-black-message-box-miscellaneous-angle-rectangle-thumbnail.png');
+  background-size: contain;
+  vertical-align: middle;
+  margin-right: 5px;
 }
