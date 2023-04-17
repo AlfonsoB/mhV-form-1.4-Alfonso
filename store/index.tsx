@@ -1,6 +1,7 @@
 import { configureStore, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface Entry {
+  id: number;
   name: string;
   email: string;
   message: string;

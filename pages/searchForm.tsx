@@ -3,16 +3,13 @@ import { useState } from 'react';
 import { Button, Form, FormControl, Table } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
+import './searchForm.scss';
 
 export default function SearchForm() {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchBy, setSearchBy] = useState('name');
-  const [results, setResults] = useState([]);
   const entriesState = useSelector((state: RootState) => state.entries);
-
-  // const filteredEntries = entriesState.entries.filter((entry) => entry.email === searchTerm);
-
-  // // const onSearch = (e) => setSearchTerm(e.target.value);
+  const [results, setResults] = useState(entriesState.entries);
 
   const handleSearch = () => {
     const filteredItems = entriesState.entries.filter((item) => {
@@ -30,7 +27,7 @@ export default function SearchForm() {
   return (
     <div>
       <Form>
-        <div>
+        <div className="search-bar-container">
           <Form.Group controlId="searchTerm">
             <FormControl
               type="text"
@@ -51,7 +48,11 @@ export default function SearchForm() {
             </Form.Control>
           </Form.Group>
         </div>
-        <Button variant="primary" onClick={handleSearch}>
+        <Button
+          className="search-submit-btn"
+          variant="primary"
+          onClick={handleSearch}
+        >
           Search
         </Button>
       </Form>
